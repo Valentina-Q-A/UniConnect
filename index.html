@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Grupos de Estudio UdeA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>UniConnect</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="como-funciona.html">Cómo Funciona</a>
+      <a href="estudiantes.html">Estudiantes</a>
+    </nav>
+    <button class="btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjQ-YTo4Tk2qqWxlBguIClTXiLiWIhzFpX_WQwL_VbXhijGw/viewform?usp=sharing&ouid=102616594721098748373','_blank')">Explorar Grupos</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Conecta con compañeros<br>y forma tu grupo de estudio</h2>
+      <p>Encuentra estudiantes de Ingeniería que compartan tus materias e intereses. Organiza tus proyectos y potencia tu aprendizaje colaborativo.</p>
+      <button class="btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjQ-YTo4Tk2qqWxlBguIClTXiLiWIhzFpX_WQwL_VbXhijGw/viewform?usp=sharing&ouid=102616594721098748373','_blank')">Explorar Grupos</button>
+    </div>
+    <img src="estudiantes.jpeg" alt="Estudiantes">
+  </section>
+
+  <section class="cards-container">
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Juan Pérez">
+      <h3>Juan Pérez</h3>
+      <p>Ingeniería Electrónica - 1er semestre</p>
+      <div class="materias">Cálculo I • Programación Básica</div>
+    </div>
+
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Gómez">
+      <h3>Ana Gómez</h3>
+      <p>Ingeniería Mecánica - 1er semestre</p>
+      <div class="materias">Física I • Álgebra Lineal</div>
+    </div>
+
+    <div class="card">
+      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos Ruiz">
+      <h3>Carlos Ruiz</h3>
+      <p>Ingeniería de Sistemas - 1er semestre</p>
+      <div class="materias">Introducción a la Ingeniería • Programación I</div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 UniConnect UdeA | Desarrollado por Camilo Anacona y Valentina Quiroga ®
+  </footer>
+
+  <script>
+  // Aplica efecto de aparición al cargar
+  document.body.classList.add("fade-in");
+
+  // Efecto de salida al navegar
+  const links = document.querySelectorAll("a[href]");
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href && !href.startsWith("#") && !link.target) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400); // duración de la animación de salida
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

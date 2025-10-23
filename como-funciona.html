@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo Funciona - UniConnect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>UniConnect</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="como-funciona.html">Cómo Funciona</a>
+      <a href="estudiantes.html">Estudiantes</a>
+    </nav>
+    <button class="btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjQ-YTo4Tk2qqWxlBguIClTXiLiWIhzFpX_WQwL_VbXhijGw/viewform?usp=sharing&ouid=102616594721098748373','_blank')">Explorar Grupos</button>
+  </header>
+
+  <section class="content">
+    <h2>¿Por qué nace UniConnect?</h2>
+    <p>Durante los primeros semestres de Ingeniería, muchos estudiantes enfrentan una dificultad común: la falta de conexiones sociales y académicas. Es frecuente que algunos se sientan desorientados, sin compañeros con quienes compartir dudas, resolver ejercicios o estudiar antes de los parciales. Esto puede generar desmotivación e incluso llevar a que abandonen la carrera.</p>
+
+    <p>UniConnect nace como una solución a este problema. Nuestra plataforma busca crear un entorno donde los estudiantes puedan conocerse, identificar intereses comunes y formar grupos de estudio efectivos, fortaleciendo tanto sus habilidades académicas como sociales.</p>
+
+    <h2>¿Cómo funciona?</h2>
+    <ol>
+      <li>Completa el formulario con tus datos y materias de interés.</li>
+      <li>Nuestro sistema agrupa estudiantes con materias o afinidades similares.</li>
+      <li>Recibes sugerencias de grupos y compañeros con los que puedes contactar.</li>
+      <li>Organiza tus encuentros de estudio, comparte materiales y aprende en comunidad.</li>
+    </ol>
+
+    <div style="text-align:center; margin-top:30px;">
+      <button class="btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfjQ-YTo4Tk2qqWxlBguIClTXiLiWIhzFpX_WQwL_VbXhijGw/viewform?usp=sharing&ouid=102616594721098748373','_blank')">Explorar Grupos</button>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 UniConnect UdeA | Desarrollado por Camilo Anacona y Valentina Quiroga ®
+  </footer>
+<script>
+  // Aplica efecto de aparición al cargar
+  document.body.classList.add("fade-in");
+
+  // Efecto de salida al navegar
+  const links = document.querySelectorAll("a[href]");
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href && !href.startsWith("#") && !link.target) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400); // duración de la animación de salida
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
